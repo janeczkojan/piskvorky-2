@@ -11,6 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Piskvorky2.Domain\Piskvorky2.Domain.csproj" />
+    <ProjectReference Include="..\Piskvorky2.Repositories\Piskvorky2.Repositories.csproj" />
     <ProjectReference Include="..\Piskvorky2.Services\Piskvorky2.Services.csproj" />
   </ItemGroup>
 

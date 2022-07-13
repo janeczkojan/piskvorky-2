@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Piskvorky2.Domain\Piskvorky2.Domain.csproj" />
-    <ProjectReference Include="..\Piskvorky2.Repositories\Piskvorky2.Repositories.csproj" />
-  </ItemGroup>
-
 </Project>
