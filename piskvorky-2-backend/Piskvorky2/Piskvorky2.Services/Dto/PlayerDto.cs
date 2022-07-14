@@ -18,6 +18,6 @@ namespace Piskvorky2.Services.Dto
 
         public string TextColor { get; set; }
 
-        public DateTime LastActivity { get; set; }
+        //public DateTime LastActivity { get; set; }
     }
 }

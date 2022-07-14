@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Piskvorky2.Repositories.Models;
+using AutoMapper;
 
 namespace Piskvorky2.Services.Services
 {
@@ -17,31 +18,32 @@ namespace Piskvorky2.Services.Services
 
     internal class GameService : IGameService
     {
-
         private readonly IPlayersRepository _playersRepository;
 
         private readonly IGamesRepository _gamesRepository;
 
-        public GameService(IPlayersRepository playersRepository, IGamesRepository gamesRepository)
+        private readonly IMapper _mapper;
+
+        public GameService(IPlayersRepository playersRepository, IGamesRepository gamesRepository, IMapper mapper)
         {
             _playersRepository = playersRepository;
             _gamesRepository = gamesRepository;
+            _mapper = mapper;
         }
 
         public async Task<PlayerDto> GetOnePlayerTest()
         {
             var players = await _playersRepository.GetAll();
             var player = players[0];
-
-            throw new NotImplementedException();
+            
+            return _mapper.Map<PlayerDto>(player);
         }
 
         public async Task<IEnumerable<PlayerDto>> GetAllPlayers()
         {
             var players = await _playersRepository.GetAll();
 
-            throw new NotImplementedException();
-
+            return _mapper.Map<IEnumerable<PlayerDto>>(players);
         }
     }
 }
