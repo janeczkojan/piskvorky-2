@@ -13,9 +13,6 @@ import { listenForResize } from './store/window/window.actions';
 })
 export class AppComponent implements OnInit {
 
-    windowWidth$: Observable<number> = this.store.select(selectWindowWidth);
-    windowHeight$: Observable<number> = this.store.select(selectWindowHeight);
-
     constructor(
         private readonly store: Store<AppState>
     ) {}

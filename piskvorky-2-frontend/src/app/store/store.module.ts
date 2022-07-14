@@ -7,11 +7,13 @@ import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { EffectsModule } from '@ngrx/effects';
 import { windowReducer } from './window/window.reducer';
 import { WindowEffects } from './window/window.effects';
+import { gameReducer } from './game/game.reducer';
 
 
 const reducers = {
 	router: routerReducer,
-	window: windowReducer
+	window: windowReducer,
+	game: gameReducer
 };
 
 const effects = [
