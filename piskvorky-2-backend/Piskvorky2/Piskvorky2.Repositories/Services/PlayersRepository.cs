@@ -10,16 +10,16 @@ using Piskvorky2.Domain;
 
 namespace Piskvorky2.Repositories.Services
 {
-    //public interface IPlayersRepository
-    //{
-    //    Task<List<Player>> GetAll();
-    //    Task<Player> Get(string id);
-    //    Task Create(Player player);
-    //    Task Update(Player player);
-    //    Task Delete(string id);
-    //}
+    public interface IPlayersRepository
+    {
+        Task<List<Player>> GetAll();
+        Task<Player> Get(string id);
+        Task Create(Player player);
+        Task Update(Player player);
+        Task Delete(string id);
+    }
 
-    public class PlayersRepository //: IPlayersRepository
+    internal class PlayersRepository : IPlayersRepository
     {
         private readonly IMongoCollection<Player> _playersCollection;
 

@@ -11,7 +11,7 @@ namespace Piskvorky2.Repositories.Services
 
     }
 
-    class GamesRepository : IGamesRepository
+    internal class GamesRepository : IGamesRepository
     {
 
     }

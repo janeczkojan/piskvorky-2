@@ -1,6 +1,5 @@
 using Piskvorky2.Domain;
-using Piskvorky2.Repositories.Models;
-using Piskvorky2.Repositories.Services;
+using Piskvorky2.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +13,8 @@ builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("D
  * TODO remove reference to Repositories project
  * 
  */
-builder.Services.AddSingleton<PlayersRepository>();
+
+builder.Services.AddServices();
 
 builder.Services.AddControllers();
 

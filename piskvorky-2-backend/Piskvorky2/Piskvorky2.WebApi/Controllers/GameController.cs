@@ -1,24 +1,30 @@
 using Microsoft.AspNetCore.Mvc;
-using Piskvorky2.Repositories.Models;
-using Piskvorky2.Repositories.Services;
+using Piskvorky2.Services.Dto;
+using Piskvorky2.Services.Services;
 
 namespace Piskvorky2.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class Game : ControllerBase
+    public class GameController : ControllerBase
     {
-        private readonly PlayersRepository _playersRepository;
+        private readonly IGameService _gameService;
 
-        public Game(PlayersRepository playerRepository)
+        public GameController(IGameService gameService)
         {
-           _playersRepository = playerRepository;
+           _gameService = gameService;
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<Player>> GetAll()
+        [HttpGet("get-all-players")]
+        public async Task<IEnumerable<PlayerDto>> GetAll()
         {
-            return await _playersRepository.GetAll();
+            return await _gameService.GetAllPlayers();
+        }
+
+        [HttpGet("get-one-player-test")]
+        public async Task<PlayerDto> GetOne()
+        {
+            return await _gameService.GetOnePlayerTest();
         }
     }
 }
